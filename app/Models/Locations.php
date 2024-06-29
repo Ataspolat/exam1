@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Locations extends Model
 {
-    use HasFactory;
+    protected $guarded = [
+        'id',
+    ];
+
+    public $timestamps = false;
+
+    // one to many
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

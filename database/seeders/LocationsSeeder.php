@@ -12,6 +12,14 @@ class LocationsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $objs = [
+            'Univermag',
+            'Parahat1',
+            'Anew',
+        ];
+
+        foreach ($objs as $obj) {
+            Lcations::create(['name' => $obj]);
+        }
     }
 }
