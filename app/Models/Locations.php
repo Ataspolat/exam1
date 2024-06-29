@@ -13,9 +13,5 @@ class Locations extends Model
 
     public $timestamps = false;
 
-    // one to many
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
+
 }
