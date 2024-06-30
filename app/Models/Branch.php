@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Branch extends Model
 {
-    use HasFactory;
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 }

@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Locations extends Model
 {
-    protected $guarded = [
-        'id',
-    ];
+    public function classrooms()
+    {
+        return $this->hasMany(Classroom::class);
+    }
 
-    public $timestamps = false;
 
 
 }

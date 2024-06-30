@@ -7,17 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classroom extends Model
 {
-    use HasFactory;
-
-    protected $guarded = [
-        'id',
-    ];
-
-    public $timestamps = false;
-
-    // one to many
-    public function locations()
+    public function location()
     {
-        return $this->hasMany(location::class);
+        return $this->belongsTo(Location::class);
     }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
 }
