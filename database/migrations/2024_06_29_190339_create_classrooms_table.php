@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('location_id')->index();
-            $table->foreign('location_id')->references('id')->on('locations')->cascadeOnDelete();
-
+            $table->foreignId('location_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->timestamps();
         });
     }
 

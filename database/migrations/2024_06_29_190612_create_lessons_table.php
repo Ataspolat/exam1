@@ -13,15 +13,10 @@ return new class extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('classroom_id')->index();
-            $table->foreign('classroom_id')->references('id')->on('classrooms')->cascadeOnDelete();
-
-            $table->unsignedBigInteger('branch_id')->index();
-            $table->foreign('branch')->references('id')->on('branches')->cascadeOnDelete();
-
-            $table->unsignedBigInteger('teacher_id')->index();
-            $table->foreign('teacher_id')->references('id')->on('teachers')->cascadeOnDelete();->nullable();
+            $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
+            $table->foreignId('branch_id')->constrained()->onDelete('cascade');
+            $table->foreignId('teacher_id')->nullable()->constrained()->onDelete('set null');
+            $table->timestamps();
         });
     }
 

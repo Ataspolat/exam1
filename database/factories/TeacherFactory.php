@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Teacher;
+use Faker\Generator as Faker;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Teacher>
@@ -16,8 +18,11 @@ class TeacherFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
-        ];
+        $factory->define(Teacher::class, function (Faker $faker) {
+            return [
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+            ];
+        });
     }
 }
