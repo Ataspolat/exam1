@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreign('lesson_id')->references('id')->on('lessons')->cascadeOnDelete();
+            $table->foreign('student_id')->references('id')->on('students')->cascadeOnDelete();
+            $table->integer('price');
+            $table->integer('created_ad');
+            $table->integer('updated_ad');
         });
     }
 
