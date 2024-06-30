@@ -12,6 +12,16 @@ class BranchSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $objs = [
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+        ];
+
+        foreach ($objs as $obj) {
+            Branches::create(['name' => $obj]);
+        }
     }
 }
