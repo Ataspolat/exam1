@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('phone')->nullable();
             $table->date('birthday');
-            $table->string('gender');
-            $table->timestamps();
+            $table->boolean('gender');
+            $table->timestamp('created_at');
         });
     }
 

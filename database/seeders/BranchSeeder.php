@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Branch;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +22,7 @@ class BranchSeeder extends Seeder
         ];
 
         foreach ($objs as $obj) {
-            Branches::create(['name' => $obj]);
+            Branch::create(['name' => $obj]);
         }
     }
 }

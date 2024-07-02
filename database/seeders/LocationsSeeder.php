@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Locations;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,7 @@ class LocationsSeeder extends Seeder
         ];
 
         foreach ($objs as $obj) {
-            Lcations::create(['name' => $obj]);
+            Locations::create(['name' => $obj]);
         }
     }
 }
